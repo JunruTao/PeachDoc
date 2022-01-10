@@ -12,24 +12,9 @@
 - [peach.pHoudini](./pHoudini/README.md)
 - [peach.pQt](./pBlender/README.md)
 
-## Module Structure:
-- [peach.pDir](#pdir)
-    - [pathSlashConvert](#pathSlashConvert)
-    - [test](#join)
+## Topics:
+1. [Path Formatting](#1-path-formatting)
 
-## pDir
-> [ Peach Directory ] This script contains This script contains functions and variables that related to path, directory functions.
 
-### pathSlashConvert
-| `function` `public`<div style="width:500px"></div>          |
-|:------------------------------------------------------------------------------|
-|:electric_plug: `str` __path__: _path to convert_                              |
-|<div align="right">:arrow_double_down:`str` __return:__ _path to convert_</div>|
 
-#### join
-<table>
-  <tr><td style="width:500px">Ed</td></tr>
-  <tr><td>Albert</td></tr>
-  <tr><td>Jane</td></tr>
-  <tr><td>William</td></tr>
-</table>
+## 1. Path Formatting
