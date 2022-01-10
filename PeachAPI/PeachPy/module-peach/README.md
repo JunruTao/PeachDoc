@@ -4,6 +4,7 @@
     }
 </style>
 
+
 # Module `peach`
 
 ## Sub-modules:
@@ -26,3 +27,9 @@
 |<div align="right">:arrow_double_down:`str` __return:__ _path to convert_</div>|
 
 #### join
+<table>
+  <tr><td style="width:500px">Ed</td></tr>
+  <tr><td>Albert</td></tr>
+  <tr><td>Jane</td></tr>
+  <tr><td>William</td></tr>
+</table>
