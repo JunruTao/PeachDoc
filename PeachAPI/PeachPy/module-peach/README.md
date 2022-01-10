@@ -1,12 +1,3 @@
-<head>
-<style>
-    table{
-        width: 900px;
-        background-color: yellow;
-    }
-</style>
-</head>
-
 # Module `peach`
 
 ## Sub-modules:
@@ -16,16 +7,16 @@
 
 ## Module Structure:
 - [peach.pDir](#pdir)
-    - [pDir.pathSlashCvt](#pathslashconvert-function)
+    - [pathSlashConvert](#pathSlashConvert)
     - [test](#join)
 
 ## pDir
 > [ Peach Directory ] This script contains This script contains functions and variables that related to path, directory functions.
 
-#### pathSlashConvert (Fn)
-|:electric_plug: params <div></div>|
-|:---|
-|:arrow_forward: `str` __path__: _path to convert_ |
-|<div align="right">:leftwards_arrow_with_hook: __return__: `str` _path to convert_</div>|
+### pathSlashConvert
+| `function` `public`<div style="width:500px"></div>          |
+|:------------------------------------------------------------------------------|
+|:electric_plug: `str` __path__: _path to convert_                              |
+|<div align="right">:arrow_double_down:`str` __return:__ _path to convert_</div>|
 
 #### join
