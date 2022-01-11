@@ -18,11 +18,12 @@
 
 
 ## 1. peach.pDir
-
 ### 1.1 Back-slash to Fore-slash
 In order to work nicely with Houdini on Window Machines, all the file path should be formatted with `/`. Here's a simple function does it:
 
-:floppy_disk: key function: `peach.pDir.pathSlashConvert(path="")`
+> key function:
+- <sub>`pub` `args` `return`</sub>
+   <table><tr><td> peach.pDir.<code> pathSlashConvert </code> <sup>(path="")</sup> </td></tr></table>
 
 ```python
 from peach import pDir
@@ -31,8 +32,11 @@ pDir.pathSlashConvert("C:\\your_path\\to_file.ext")
 >>> "C:/your_path/to_file.ext"
 ```
 
+<br><br>
 ### 1.2 Extension removal
-:floppy_disk: key function: `peach.pDir.remove_ext(file_name='')`
+> key function:
+- <sub>`pub` `args` `return`</sub>
+   <table><tr><td> peach.pDir.<code> remove_ext </code> <sup> (file_name='') </sup> </td></tr></table>
 
 ```python
 from peach import pDir
@@ -41,12 +45,17 @@ pDir.remove_ext("your_file.ext")
 >>> "your_file"
 ```
 
+<br><br>
 ### 1.3 os.path function encapsulation 
 Instead of import os module everywhere in the code, it is nice to wrap them up into some handy functions.
+> key function: (works the same as os.path.exists )
+- <sub>`pub` `args` `return`</sub>
+   <table><tr><td> peach.pDir.<code> exists </code> <sup> (path) </sup> </td></tr></table>
 
-- `exists` works the same as _os.path.exists_
-- `join` works the same as _os.path.join_
-  
+> key function: (works the same as os.path.join )
+- <sub>`pub` `args` `return`</sub>
+   <table><tr><td> peach.pDir.<code> join </code> <sup> (*args) </sup> </td></tr></table>
+
 ```python
 from peach import pDir
 
@@ -57,13 +66,23 @@ pDir.exists("your_path")
 >>> False
 ```
 
+<br><br>
 ### 1.4 ls functions
-:floppy_disk: Key Functions: `ls`, `listdir`, `listfiles`
-- Function Params and Returns: 
-    - :electric_plug: `str` __path__  &larr; filepath to scan
-    - :electric_plug: `bool` __n__  &larr; true: return _names_; false: return _full path_.
-    
-    &rarr; _return_: `list` of names/paths, `None` if directory not found.
+
+> key function: (works the same as os.path.exists )
+- <sub>`pub` `args` `return`</sub>
+   <table><tr><td> peach.pDir.<code> exists </code><sup>(path="", n=False)</sup>, 
+      <code> listdir </code></code><sup>(path="", n=False)</sup>, 
+      <code> listfiles </code></code><sup>(path="", n=False)</sup>
+  </td></tr></table>
+
+> details:
+  - Parameters
+    > - :electric_plug: `str` __path__  &larr; filepath to scan
+    > - :electric_plug: `bool` __n__  &larr; true: return _names_; false: return _full path_.
+  - Return
+    > - &rarr; `list` of names/paths, `None` if directory not found.
+
 
 ```python
 from peach import pDir
@@ -78,6 +97,8 @@ pDir.listfiles("your_path", n=False)
 >>> ["Files", ]
 ```
 
+
+<br><br>
 ### 1.5 Peach Paths
 In order to get configure other modules, loading resources, etc, it is very handy to handle the path here.
 
