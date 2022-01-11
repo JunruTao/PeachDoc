@@ -1,9 +1,14 @@
 # Module peach
 
+## Sub-modules
+- [peach.pBlender](./pBlender/README.md)
+- [peach.pHoudini](./pHoudini/README.md)
+- [peach.pQt](./pBlender/README.md)
+
 ## Topics
 - [Module peach](#module-peach)
-  - [Topics](#topics)
   - [Sub-modules](#sub-modules)
+  - [Topics](#topics)
   - [1. peach.pDir](#1-peachpdir)
     - [1.0 Dependencies](#10-dependencies)
     - [1.1 Back-slash to Fore-slash](#11-back-slash-to-fore-slash)
@@ -29,13 +34,6 @@
       - [4.3.1 Constructor](#431-constructor)
       - [4.3.2 Refresh Database](#432-refresh-database)
       - [4.3.3 getTypes, getNames, get](#433-gettypes-getnames-get)
-
-<br><br>
-
-## Sub-modules
-- [peach.pBlender](./pBlender/README.md)
-- [peach.pHoudini](./pHoudini/README.md)
-- [peach.pQt](./pBlender/README.md)
 
 <br><br>
 
@@ -613,7 +611,7 @@ There's no need to handle this object by users manually. Icon object is a type, 
 - <sub>`getter` `args`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    Icon.<code> getPath </code><sup>(self, size="")</sup><br>
+    Icon.<code> getPath </code><sup>(self, size="SVG")</sup><br>
     </td></tr> 
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ PARAMETER INPUTS ] -->
