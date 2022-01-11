@@ -22,8 +22,14 @@
 In order to work nicely with Houdini on Window Machines, all the file path should be formatted with `/`. Here's a simple function does it:
 
 > key function:
-- <sub>`pub` `args` `return`</sub>
-   <table><tr><td> peach.pDir.<code> pathSlashConvert </code> <sup>(path="")</sup> </td></tr></table>
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td>
+    peach.pDir.<code> pathSlashConvert </code> <sup>(path="")</sup> 
+    </td></tr>
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
 
 ```python
 from peach import pDir
@@ -34,9 +40,16 @@ pDir.pathSlashConvert("C:\\your_path\\to_file.ext")
 
 <br><br>
 ### 1.2 Extension removal
+
 > key function:
-- <sub>`pub` `args` `return`</sub>
-   <table><tr><td> peach.pDir.<code> remove_ext </code> <sup> (file_name='') </sup> </td></tr></table>
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> 
+    peach.pDir.<code> remove_ext </code> <sup> (file_name='') </sup> 
+    </td></tr>
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
 
 ```python
 from peach import pDir
@@ -48,13 +61,28 @@ pDir.remove_ext("your_file.ext")
 <br><br>
 ### 1.3 os.path function encapsulation 
 Instead of import os module everywhere in the code, it is nice to wrap them up into some handy functions.
+
 > key function: (works the same as os.path.exists )
-- <sub>`pub` `args` `return`</sub>
-   <table><tr><td> peach.pDir.<code> exists </code> <sup> (path) </sup> </td></tr></table>
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pDir.<code> exists </code> <sup> (path) </sup> 
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
 
 > key function: (works the same as os.path.join )
-- <sub>`pub` `args` `return`</sub>
-   <table><tr><td> peach.pDir.<code> join </code> <sup> (*args) </sup> </td></tr></table>
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pDir.<code> join </code> <sup> (*args) </sup> 
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
 
 ```python
 from peach import pDir
@@ -70,24 +98,32 @@ pDir.exists("your_path")
 ### 1.4 ls functions
 
 > key functions:
-- <sub>`pub` `args` `return`</sub>
-    <table><tr><td> 
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
     peach.pDir.<code> ls </code><sup>(path="", n=False)</sup>,<br>
     peach.pDir.<code> listdir </code></code><sup>(path="", n=False)</sup>,<br>
     peach.pDir.<code> listfiles </code></code><sup>(path="", n=False)</sup>
-    </td></tr>
-    <tr><td>
-    <details> <summary><i>parameters</i>: </summary>
-    - <code>str</code> <b> path </b>  &larr; filepath to scan<br>
-    - <code>bool</code> <b> n </b> &larr; true: return <i>names</i>; false: return <i>full path</i> 
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    - <code>str</code>  <b> path </b> : filepath to scan<br>
+    - <code>bool</code> <b> n </b> : true: return <i>names</i>; false: return <i>full path</i> 
     </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    - &rarr; <code>list</code> of names/paths,"<code>None</code> if directory not found.
+    </detials> 
     </td></tr>
-    <tr><td>
-    <details> <summary><i>return</i>: </summary>
-    &rarr; <code>list</code> of names/paths,"<code>None</code> if directory not found.
-    </detials>
-    </td></tr>
+    <!-- ( /END OF RETURN ) -->
     </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
 
 
 ```python
@@ -109,48 +145,86 @@ pDir.listfiles("your_path", n=False)
 In order to get configure other modules, loading resources, etc, it is very handy to handle the path here.
 
 > key function:
-- <sub>`pub` `return`</sub>
-   <table><tr><td> peach.pDir.<code> getPeachDir </code> 
-   <br><br>
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pDir.<code> getPeachDir </code> 
+    <br><br>
     <blockquote> - Note: this function will only search once in runtime when it is called, it's recursive search from the python module until it finds the root <code>${PEACH}</code> folder. After that, it will store the value in <code>_PEACH_DIR</code> file scope global variable.</blockquote>
     </td></tr>
-    <tr><td>
-    <details> <summary><i>return</i>: </summary>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
     &rarr; <code>str</code> "<b>${peach}/</b>"
-    </detials></td></tr></table> 
+    </detials>
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
 
 
 > other Functions: 
 
-
-- <sub>`pub` `return`</sub>
-   <table><tr><td> peach.pDir.<code> getPeachConfigsDir </code>
-   </td></tr>
-    <tr><td>
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pDir.<code> getPeachConfigsDir </code>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
     <details> <summary><i>return</i>: </summary>
     &rarr; <code>str</code> "<b>${peach}/config</b>"
-    </detials></td></tr></table>
-- <sub>`pub` `return`</sub>
-   <table><tr><td> peach.pDir.<code> getPeachHouDir </code> 
-   </td></tr>
-    <tr><td>
+    </detials>
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pDir.<code> getPeachHouDir </code> 
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
     <details> <summary><i>return</i>: </summary>
     &rarr; <code>str</code> "<b>${peach}/pHoudini</b>"
-    </detials></td></tr></table>
-- <sub>`pub` `return`</sub>
-   <table><tr><td> peach.pDir.<code> getPeachBlnDir </code>
-   </td></tr>
-    <tr><td> 
+    </detials>
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pDir.<code> getPeachBlnDir </code>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
     <details> <summary><i>return</i>: </summary>
     &rarr; <code>str</code> "<b>${peach}/pBlender</b>"
     </detials>
-    </td></tr></table>
-- <sub>`pub` `return`</sub>
-   <table><tr><td> peach.pDir.<code> getPeachIconsDir </code>
-   </td></tr>
-    <tr><td>
-    <details> <summary><i>return</i>: </summary>
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pDir.<code> getPeachIconsDir </code>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
     &rarr; <code>str</code> "<b>${peach}/icons</b>"
     </detials>
-    </td></tr></table>
-
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
