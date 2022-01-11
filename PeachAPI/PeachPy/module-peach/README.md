@@ -23,7 +23,12 @@
     - [4.0 Denpendencies](#40-denpendencies)
     - [4.1 Icon Path configuration](#41-icon-path-configuration)
     - [4.2 Icon Class](#42-icon-class)
+      - [4.2.1 Constructor](#421-constructor)
+      - [4.2.2 getPath, getName](#422-getpath-getname)
     - [4.3 IconTank Class](#43-icontank-class)
+      - [4.3.1 Constructor](#431-constructor)
+      - [4.3.2 Refresh Database](#432-refresh-database)
+      - [4.3.3 getTypes, getNames, get](#433-gettypes-getnames-get)
 
 <br><br>
 
@@ -144,7 +149,7 @@ If you are familiar with Linux `ls` function, this is basically what it does: it
     <tr><td> <!-- [ RETURN VALUES ] -->
     <details> 
     <summary><i>return</i>: </summary>
-    <!--@return-->- &rarr; <code>list</code> of names/paths,"<code>None</code> if directory not found.
+    <!--@return-->&rarr; <code>list</code> of names/paths,"<code>None</code> if directory not found.
     </detials> 
     </td></tr>
     <!-- ( /END OF RETURN ) -->
@@ -176,7 +181,7 @@ In order to get configure other modules, loading resources, etc, it is very hand
 - <sub>`pub` `return`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    peach.pDir.<code> getPeachDir </code> 
+    peach.pDir.<code> getPeachDir() </code> 
     <br><br>
     <blockquote> - Note: this function will only search once in runtime when it is called, it's recursive search from the python module until it finds the root <code>${PEACH}</code> folder. After that, it will store the value in <code>_PEACH_DIR</code> file scope global variable.</blockquote>
     </td></tr>
@@ -198,7 +203,7 @@ In order to get configure other modules, loading resources, etc, it is very hand
 - <sub>`pub` `return`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    peach.pDir.<code> getPeachConfigsDir </code>
+    peach.pDir.<code> getPeachConfigsDir() </code>
     </td></tr>
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ RETURN VALUES ] -->
@@ -213,7 +218,7 @@ In order to get configure other modules, loading resources, etc, it is very hand
 - <sub>`pub` `return`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    peach.pDir.<code> getPeachHouDir </code> 
+    peach.pDir.<code> getPeachHouDir() </code> 
     </td></tr>
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ RETURN VALUES ] -->
@@ -228,7 +233,7 @@ In order to get configure other modules, loading resources, etc, it is very hand
 - <sub>`pub` `return`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    peach.pDir.<code> getPeachBlnDir </code>
+    peach.pDir.<code> getPeachBlnDir() </code>
     </td></tr>
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ RETURN VALUES ] -->
@@ -243,7 +248,7 @@ In order to get configure other modules, loading resources, etc, it is very hand
 - <sub>`pub` `return`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    peach.pDir.<code> getPeachIconsDir </code>
+    peach.pDir.<code> getPeachIconsDir() </code>
     </td></tr>
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ RETURN VALUES ] -->
@@ -269,7 +274,7 @@ In order to get configure other modules, loading resources, etc, it is very hand
 In order to reload function in runtime for testing, debug purposes, it is very handy to wrap the `reload` functions in one place in order to make scripts more robostic in python 2 and 3. At the same time, allowing one reload function to reload multiple modules.
 
 > global variables:
-<!--///////////////////Function-Table/////////////////////-->
+<!--///////////////////Variable-Table/////////////////////-->
 - <sub>`global` `bool` `default`=True</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ Variable ] -->
@@ -459,7 +464,7 @@ mc.Foo()
 
 ### 3.2 Enable And Disable Debug Message
 > global variables:
-<!--///////////////////Function-Table/////////////////////-->
+<!--///////////////////Variable-Table//////////////////////-->
 - <sub>`private` `bool` `default`=True</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ Variable ] -->
@@ -474,7 +479,7 @@ mc.Foo()
 - <sub>`pub`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td>
-    peach.pLog.<code> enable_debug_msg </code>
+    peach.pLog.<code> enable_debug_msg() </code>
     </td></tr>
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
@@ -482,7 +487,7 @@ mc.Foo()
 - <sub>`pub`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td>
-    peach.pLog.<code> disable_debug_msg </code>
+    peach.pLog.<code> disable_debug_msg() </code>
     </td></tr>
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
@@ -566,13 +571,185 @@ finally:
 - `peach.pLog`
 
 ### 4.1 Icon Path configuration
+Even though `configure_icon_path()` is a public function, there's no need to call this function in other scripts. basically it calculate the icon path and store it in a global parameter of this module.
 
 <br><br>
 
 ### 4.2 Icon Class
+There's no need to handle this object by users manually. Icon object is a type, you can get this object from IconTank Object instance. Check section [4.3 IconTank Class](#43-icontank-class). Once you get the icon object, you can call `getPath` and `getName` to get the information you required.
+
+<!--///////////////////Class-Table/////////////////////-->
+<sub> Inherit &rarr; `object` </sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ CLASS ] -->
+    <h4>peach.pIco.<code> Icon </code><sup>class</sup><br></h4>
+    </td></tr> 
+    <!-- ( /END OF CLASS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+> member functions:
+#### 4.2.1 Constructor
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`constructor` `args`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    Icon.<code> __init__ </code><sup>(self, name="", types=None)</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>str</code>  <b> name </b> : icon name<br>
+    <!--@param-->- <code>list</code> or <code>str</code> <b> types </b> : i.g. "x25", "SVG" etc
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+#### 4.2.2 getPath, getName
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`getter` `args`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    Icon.<code> getPath </code><sup>(self, size="")</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>str</code>  <b> size </b> : i.g. "x25", "SVG" etc
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code>list</code> or <code>None</code> filepath of the icon
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`getter` `args`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    Icon.<code> getName() </code>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code>str</code> name of this icon object
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
 
 <br><br>
+
 
 ### 4.3 IconTank Class
 
-<br><br>
+
+<!--///////////////////Class-Table/////////////////////-->
+<sub> Inherit &rarr; `object` </sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ CLASS ] -->
+    <h4>peach.pIco.<code> IconTank </code><sup>class</sup><br></h4>
+    </td></tr> 
+    <!-- ( /END OF CLASS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+> member functions:
+#### 4.3.1 Constructor
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`constructor` `args`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    IconTank.<code> __init__ </code><sup>(self, name="", types=None)</sup><br><br>
+    <blockquote>
+    When IconTank's constructor is called the first time, internally it will run function 
+    <i>_construct_library</i>. it will construct/log in all the found icons by scanning the directory.This function will be only running once. unless refresh is called.
+    </blockquote>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+#### 4.3.2 Refresh Database
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`member`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    IconTank.<code> refresh </code><sup>(self, name="", types=None)</sup><br><br>
+    <blockquote>
+    Clear Icon Database and rescan directory. and call <i>_construct_library</i>. it will construct/log in all the found icons, by scanning the directory.
+    </blockquote>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+#### 4.3.3 getTypes, getNames, get
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`getter`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    Icon.<code> getTypes() </code><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code>list</code> icon types
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`getter`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    Icon.<code> getNames() </code><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code>list</code> icon names
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`getter` `args`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    Icon.<code> get </code><sup>(self, name="")</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>str</code>  <b> name </b> : name of the icon
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code>Icon</code> <a href="#42-icon-class"> Icon Object</a>
+
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
