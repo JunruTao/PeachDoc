@@ -1,6 +1,5 @@
 # PeachPy - Python 3 API
 
-Modules:
 
 - [peach](./module-peach/README.md)
 - [peach.pBlender](./module-peach/pBlender/README.md)

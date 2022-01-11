@@ -69,19 +69,36 @@ pDir.exists("your_path")
 <br><br>
 ### 1.4 ls functions
 
-> key function: (works the same as os.path.exists )
+> key functions:
 - <sub>`pub` `args` `return`</sub>
-   <table><tr><td> peach.pDir.<code> exists </code><sup>(path="", n=False)</sup>, 
-      <code> listdir </code></code><sup>(path="", n=False)</sup>, 
-      <code> listfiles </code></code><sup>(path="", n=False)</sup>
-  </td></tr></table>
+   <table><tr><td> 
+    peach.pDir.<code> ls </code><sup>(path="", n=False)</sup>,<br>
+    peach.pDir.<code> listdir </code></code><sup>(path="", n=False)</sup>,<div> 
+    peach.pDir.<code> listfiles </code></code><sup>(path="", n=False)</sup>
+    </td></tr>
+    <tr><td>
+
+    <details> <summary><i>parameters</i>: </summary>
+    &rarr; <code>list</code> of names/paths,"<code>None</code> if directory not found.
+    </detials><dv></p>
+
+    </td></tr>
+    <tr><td>
+
+    <details> <summary><i>return</i>: </summary>
+    &rarr; <code>list</code> of names/paths,"<code>None</code> if directory not found.
+    </detials>
+    
+    </p>
+    </td></tr></table>
+
 
 > details:
   - Parameters
     > - :electric_plug: `str` __path__  &larr; filepath to scan
     > - :electric_plug: `bool` __n__  &larr; true: return _names_; false: return _full path_.
   - Return
-    > - &rarr; `list` of names/paths, `None` if directory not found.
+    > - &rarr; `list`  `None` if directory not found.
 
 
 ```python
@@ -102,17 +119,49 @@ pDir.listfiles("your_path", n=False)
 ### 1.5 Peach Paths
 In order to get configure other modules, loading resources, etc, it is very handy to handle the path here.
 
-:floppy_disk: Key Function: `getPeachDir()`
- > :warning: this function will only search once in runtime when it is called, it's recursive search from the python module until it finds the root `${PEACH}` folder. After that, it will store the value in `_PEACH_DIR` file scope global variable.  
+> key function:
+- <sub>`pub` `return`</sub>
+   <table><tr><td> peach.pDir.<code> getPeachDir </code> 
+   <br><br>
+    <blockquote> - Note: this function will only search once in runtime when it is called, it's recursive search from the python module until it finds the root <code>${PEACH}</code> folder. After that, it will store the value in <code>_PEACH_DIR</code> file scope global variable.</blockquote>
+    </td></tr>
+    <tr><td>
+    <details> <summary><i>return</i>: </summary>
+    &rarr; <code>str</code> "<b>${peach}/</b>"
+    </detials></td></tr></table> 
 
 
-:floppy_disk: Other Functions: 
+> other Functions: 
 
-- `getPeachConfigsDir()`
-    > &rarr; _return_: `str` "__${peach}/config__"
-- `getPeachHouDir()`
-    > &rarr; _return_: `str` "__${peach}/pHoudini__"
-- `getPeachBlnDir()`
-    > &rarr; _return_: `str` "__${peach}/pBlender__"
-- `getPeachIconsDir()`
-    > &rarr; _return_: `str` "__${peach}/icons__"
+
+- <sub>`pub` `return`</sub>
+   <table><tr><td> peach.pDir.<code> getPeachConfigsDir </code>
+   </td></tr>
+    <tr><td>
+    <details> <summary><i>return</i>: </summary>
+    &rarr; <code>str</code> "<b>${peach}/config</b>"
+    </detials></td></tr></table>
+- <sub>`pub` `return`</sub>
+   <table><tr><td> peach.pDir.<code> getPeachHouDir </code> 
+   </td></tr>
+    <tr><td>
+    <details> <summary><i>return</i>: </summary>
+    &rarr; <code>str</code> "<b>${peach}/pHoudini</b>"
+    </detials></td></tr></table>
+- <sub>`pub` `return`</sub>
+   <table><tr><td> peach.pDir.<code> getPeachBlnDir </code>
+   </td></tr>
+    <tr><td> 
+    <details> <summary><i>return</i>: </summary>
+    &rarr; <code>str</code> "<b>${peach}/pBlender</b>"
+    </detials>
+    </td></tr></table>
+- <sub>`pub` `return`</sub>
+   <table><tr><td> peach.pDir.<code> getPeachIconsDir </code>
+   </td></tr>
+    <tr><td>
+    <details> <summary><i>return</i>: </summary>
+    &rarr; <code>str</code> "<b>${peach}/icons</b>"
+    </detials>
+    </td></tr></table>
+
