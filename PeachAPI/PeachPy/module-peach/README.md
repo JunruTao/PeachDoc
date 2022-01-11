@@ -4,22 +4,22 @@
 - [Module peach](#module-peach)
   - [Topics](#topics)
   - [Sub-modules](#sub-modules)
-  - [1. pDir Module](#1-pdir-module)
+  - [1. peach.pDir](#1-peachpdir)
     - [1.0 Dependencies](#10-dependencies)
     - [1.1 Back-slash to Fore-slash](#11-back-slash-to-fore-slash)
     - [1.2 Extension removal](#12-extension-removal)
     - [1.3 os.path function encapsulation](#13-ospath-function-encapsulation)
     - [1.4 ls functions](#14-ls-functions)
     - [1.5 Peach Paths](#15-peach-paths)
-  - [2. pImp Module](#2-pimp-module)
+  - [2. peach.pImp](#2-peachpimp)
     - [2.0 Dependencies](#20-dependencies)
     - [2.1 Reload Module Function](#21-reload-module-function)
-  - [3.pLog Module](#3plog-module)
+  - [3. peach.pLog](#3-peachplog)
     - [3.0 Dependencies](#30-dependencies)
     - [3.1 Message, Debug and Warning](#31-message-debug-and-warning)
     - [3.2 Enable And Disable Debug Message](#32-enable-and-disable-debug-message)
     - [3.3 Error and Exception Throwing.](#33-error-and-exception-throwing)
-  - [4. pIco Module](#4-pico-module)
+  - [4. peach.pIco](#4-peachpico)
     - [4.0 Denpendencies](#40-denpendencies)
     - [4.1 Icon Path configuration](#41-icon-path-configuration)
     - [4.2 Icon Class](#42-icon-class)
@@ -39,7 +39,7 @@
 
 <br><br>
 
-## 1. pDir Module
+## 1. peach.pDir
 ### 1.0 Dependencies
 - `os`
 - `peach.pLog` 
@@ -264,7 +264,7 @@ In order to get configure other modules, loading resources, etc, it is very hand
 
 <br><br>
 
-## 2. pImp Module
+## 2. peach.pImp
 ### 2.0 Dependencies
 - `sys`
 - python version < 3.4 `imp`
@@ -320,7 +320,7 @@ pImp.reload(pDir, pIco, pLog)
 
 <br><br>
 
-## 3.pLog Module
+## 3. peach.pLog
 ### 3.0 Dependencies
 > python_version > 2.7
 
@@ -564,7 +564,7 @@ finally:
 
 <br><br>
 
-## 4. pIco Module
+## 4. peach.pIco
 ### 4.0 Denpendencies
 - `peach.pImp`
 - `peach.pDir`
@@ -747,7 +747,6 @@ There's no need to handle this object by users manually. Icon object is a type, 
     <details> 
     <summary><i>return</i>: </summary>
     <!--@return-->&rarr; <code>Icon</code> <a href="#42-icon-class"> Icon Object</a>
-
     </detials> 
     </td></tr>
     <!-- ( /END OF RETURN ) -->
