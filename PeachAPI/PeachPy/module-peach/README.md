@@ -750,3 +750,11 @@ There's no need to handle this object by users manually. Icon object is a type, 
     <!-- ( /END OF RETURN ) -->
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+```python
+from peach import pIco
+
+im = pIco.IconTank()
+peach_icon = im.get("peach")
+picon_path = peach_icon.getPath("x25")
+```
