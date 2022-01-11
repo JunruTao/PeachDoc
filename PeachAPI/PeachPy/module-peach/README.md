@@ -71,34 +71,23 @@ pDir.exists("your_path")
 
 > key functions:
 - <sub>`pub` `args` `return`</sub>
-   <table><tr><td> 
+    <table><tr><td> 
     peach.pDir.<code> ls </code><sup>(path="", n=False)</sup>,<br>
-    peach.pDir.<code> listdir </code></code><sup>(path="", n=False)</sup>,<div> 
+    peach.pDir.<code> listdir </code></code><sup>(path="", n=False)</sup>,<br>
     peach.pDir.<code> listfiles </code></code><sup>(path="", n=False)</sup>
     </td></tr>
     <tr><td>
-
     <details> <summary><i>parameters</i>: </summary>
-    &rarr; <code>list</code> of names/paths,"<code>None</code> if directory not found.
-    </detials><dv></p>
-
+    - <code>str</code> <b> path </b>  &larr; filepath to scan<br>
+    - <code>bool</code> <b> n </b> &larr; true: return <i>names</i>; false: return <i>full path</i> 
+    </detials><dv>
     </td></tr>
     <tr><td>
-
     <details> <summary><i>return</i>: </summary>
     &rarr; <code>list</code> of names/paths,"<code>None</code> if directory not found.
     </detials>
-    
-    </p>
-    </td></tr></table>
-
-
-> details:
-  - Parameters
-    > - :electric_plug: `str` __path__  &larr; filepath to scan
-    > - :electric_plug: `bool` __n__  &larr; true: return _names_; false: return _full path_.
-  - Return
-    > - &rarr; `list`  `None` if directory not found.
+    </td></tr>
+    </table>
 
 
 ```python
