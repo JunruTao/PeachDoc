@@ -8,7 +8,7 @@
   - [2. pQt.pq_ico](#2-pqtpq_ico)
     - [2.0 Dependencies](#20-dependencies)
     - [2.1 Getting QPixmap object](#21-getting-qpixmap-object)
-    - [2.2 Using pQt Icon Manager](#22-using-pqt-icon-manager)
+    - [2.2 Using pq_ico Icon Manager](#22-using-pq_ico-icon-manager)
 
 <br><br>
 
@@ -42,7 +42,7 @@ q_pixmap = pq_ico.getIcon("peach")
 
 <br><br>
 
-### 2.2 Using pQt Icon Manager 
+### 2.2 Using pq_ico Icon Manager 
 
 __Examples:__
 - Use Icon Manager, pre-log _QtGui.QPixmap_ objects and query them.
