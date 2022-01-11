@@ -4,20 +4,42 @@
 - [Module peach](#module-peach)
   - [Topics](#topics)
   - [Sub-modules](#sub-modules)
-  - [1. peach.pDir](#1-peachpdir)
+  - [1. pDir Module](#1-pdir-module)
+    - [1.0 Dependencies](#10-dependencies)
     - [1.1 Back-slash to Fore-slash](#11-back-slash-to-fore-slash)
     - [1.2 Extension removal](#12-extension-removal)
     - [1.3 os.path function encapsulation](#13-ospath-function-encapsulation)
     - [1.4 ls functions](#14-ls-functions)
     - [1.5 Peach Paths](#15-peach-paths)
+  - [2. pImp Module](#2-pimp-module)
+    - [2.0 Dependencies](#20-dependencies)
+    - [2.1 Reload Module Function](#21-reload-module-function)
+  - [3.pLog Module](#3plog-module)
+    - [3.0 Dependencies](#30-dependencies)
+    - [3.1 Message, Debug and Warning](#31-message-debug-and-warning)
+    - [3.2 Enable And Disable Debug Message](#32-enable-and-disable-debug-message)
+    - [3.3 Error and Exception Throwing.](#33-error-and-exception-throwing)
+  - [4. pIco Module](#4-pico-module)
+    - [4.0 Denpendencies](#40-denpendencies)
+    - [4.1 Icon Path configuration](#41-icon-path-configuration)
+    - [4.2 Icon Class](#42-icon-class)
+    - [4.3 IconTank Class](#43-icontank-class)
+
+<br><br>
 
 ## Sub-modules
 - [peach.pBlender](./pBlender/README.md)
 - [peach.pHoudini](./pHoudini/README.md)
 - [peach.pQt](./pBlender/README.md)
 
+<br><br>
 
-## 1. peach.pDir
+## 1. pDir Module
+### 1.0 Dependencies
+- `os`
+- `peach.pLog` 
+- `peach.pImp`
+
 ### 1.1 Back-slash to Fore-slash
 In order to work nicely with Houdini on Window Machines, all the file path should be formatted with `/`. Here's a simple function does it:
 
@@ -39,6 +61,7 @@ pDir.pathSlashConvert("C:\\your_path\\to_file.ext")
 ```
 
 <br><br>
+
 ### 1.2 Extension removal
 
 > key function:
@@ -59,6 +82,7 @@ pDir.remove_ext("your_file.ext")
 ```
 
 <br><br>
+
 ### 1.3 os.path function encapsulation 
 Instead of import os module everywhere in the code, it is nice to wrap them up into some handy functions.
 
@@ -95,7 +119,9 @@ pDir.exists("your_path")
 ```
 
 <br><br>
+
 ### 1.4 ls functions
+If you are familiar with Linux `ls` function, this is basically what it does: it lists all the directories or files under the given path. retunr `None` or `[]` if there isn't any.
 
 > key functions:
 <!--///////////////////Function-Table/////////////////////-->
@@ -110,15 +136,15 @@ pDir.exists("your_path")
     <tr><td> <!-- [ PARAMETER INPUTS ] -->
     <details> 
     <summary><i>parameters</i>: </summary>
-    - <code>str</code>  <b> path </b> : filepath to scan<br>
-    - <code>bool</code> <b> n </b> : true: return <i>names</i>; false: return <i>full path</i> 
+    <!--@param-->- <code>str</code>  <b> path </b> : filepath to scan<br>
+    <!--@param-->- <code>bool</code> <b> n </b> : true: return <i>names</i>; false: return <i>full path</i> 
     </detials><dv>
     </td></tr> 
     <!-- ( /END OF PARM ) -->
     <tr><td> <!-- [ RETURN VALUES ] -->
     <details> 
     <summary><i>return</i>: </summary>
-    - &rarr; <code>list</code> of names/paths,"<code>None</code> if directory not found.
+    <!--@return-->- &rarr; <code>list</code> of names/paths,"<code>None</code> if directory not found.
     </detials> 
     </td></tr>
     <!-- ( /END OF RETURN ) -->
@@ -141,6 +167,7 @@ pDir.listfiles("your_path", n=False)
 
 
 <br><br>
+
 ### 1.5 Peach Paths
 In order to get configure other modules, loading resources, etc, it is very handy to handle the path here.
 
@@ -228,3 +255,324 @@ In order to get configure other modules, loading resources, etc, it is very hand
     <!-- ( /END OF RETURN ) -->
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<br><br>
+
+## 2. pImp Module
+### 2.0 Dependencies
+- `sys`
+- python version < 3.4 `imp`
+- python version >= 3.4 `importlib`
+
+### 2.1 Reload Module Function
+In order to reload function in runtime for testing, debug purposes, it is very handy to wrap the `reload` functions in one place in order to make scripts more robostic in python 2 and 3. At the same time, allowing one reload function to reload multiple modules.
+
+> global variables:
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`global` `bool` `default`=True</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ Variable ] -->
+    peach.pImp.<code> ALLOW_MODULE_RUNTIME_RELOAD </code>
+    </td></tr>
+    <!-- ( /END OF Variable ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+> key function:
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pImp.<code> reload </code><sup>(*args, force=False)</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>modules</code>  <b> *args </b> : Modules to reload<br>
+    <!--@param-->- <code>bool</code> <b> force </b> : true then force reloading, even if <i>ALLOW_MODULE_RUNTIME_RELOAD</i> is set to <i>False</i>
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+```python
+from peach import pImp
+from peach import pDir
+from peach import pIco
+from peach import pLog
+
+# reload modules to test.
+pImp.reload(pDir, pIco, pLog)
+
+# once this is set, modules will not be reloaded.
+pImp.ALLOW_MODULE_RUNTIME_RELOAD = False
+pImp.reload(pDir, pIco, pLog)
+```
+
+<br><br>
+
+## 3.pLog Module
+### 3.0 Dependencies
+> python_version > 2.7
+
+
+### 3.1 Message, Debug and Warning
+These three are the most commently used function in this module, basically sending information to console, handy tools to inspect, debug functions, classes etc. The messages will formated in this format:
+
+| >>> `[ <class>::<function>::<state> ]: <message>` <- console message format|
+|----------------------------------------------------------------------------|
+
+Example:
+```
+>>> [pLog::AddPoint::debugMsg]: Adding point at location (2.0, 2.0, 4.3)
+>>> [IM::AddIcon::Warning]: The icon is not added, cannot find path /mnt/resource/icons/peach.png
+>>> [pLog]: Just want to print something...
+```
+
+
+> key functions:
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` </sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pLog.<code> message </code><sup>(*args, fn=None, cls=None, state="")</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>Any</code>  <b> *args </b> : arguments of (Any), messages<br>
+    <!--@param-->- <code>str/func</code> <b> fn </b> : can be function pointer or string<br>
+    <!--@param-->- <code>str/self</code> <b> cls </b> : can be class instance or string<br>
+    <!--@param-->- <code>str</code> <b> state </b> : custom state.
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` </sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pLog.<code> debug </code><sup>(*args, fn=None, cls=None)</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>Any</code>  <b> *args </b> : arguments of (Any), messages<br>
+    <!--@param-->- <code>str/func</code> <b> fn </b> : can be function pointer or string<br>
+    <!--@param-->- <code>str/self</code> <b> cls </b> : can be class instance or string<br>
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` </sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pLog.<code> warning </code><sup>(*args, fn=None, cls=None)</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>Any</code>  <b> *args </b> : arguments of (Any), messages<br>
+    <!--@param-->- <code>str/func</code> <b> fn </b> : can be function pointer or string<br>
+    <!--@param-->- <code>str/self</code> <b> cls </b> : can be class instance or string<br>
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub> &uarr; `private` `args` </sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pLog.<code> _print </code><sup>(**kwargs)</sup><br><br>
+    <blockquote>
+    [ Internal Function ] <br>
+    Other Logging Function Inplement this function internally.
+    </blockquote>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+__Exmaples:__
+
+1. Print Message
+```python
+from peach import pLog
+
+pLog.message("I've got something")
+
+# >>> [ pLog ]: I've got something
+```
+
+2. Multiple Messages
+```python
+pLog.message("I've", "got", "something")
+
+# >>> [ pLog ]: I've 
+# >>> [ pLog ]: got
+# >>> [ pLog ]: something
+```
+
+3. Print String with Sender/Function name
+```python
+def Foo():
+    pass
+
+pLog.message("I've got something", fn=Foo)
+# >>> [ pLog::Foo ]: I've got something
+
+pLog.message("I've got something", fn=Foo, cls="Test")
+# >>> [ Test::Foo ]: I've got something
+
+pLog.warning("This is a warning", fn=Foo, cls="Test")
+# >>> [ Test::Foo::Warning ]: This is a warning
+```
+
+4. Calling in side classes
+```python
+class MyClass(object):
+    def __init__(self):
+        pass
+    def Foo(self, a=1, b=2):
+        c = a + b
+        pLog.debug("Value is: %d" % c, fn=self.Foo, cls=self)
+        return c
+
+mc = MyClass()
+mc.Foo()
+
+# >>> [ MyClass::Foo::debugMsg ]: Value is 3
+```
+
+<br><br>
+
+### 3.2 Enable And Disable Debug Message
+> global variables:
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`private` `bool` `default`=True</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ Variable ] -->
+    peach.pLog.<code> _enable_debug </code>
+    </td></tr>
+    <!-- ( /END OF Variable ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+> key function:
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td>
+    peach.pLog.<code> enable_debug_msg </code>
+    </td></tr>
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td>
+    peach.pLog.<code> disable_debug_msg </code>
+    </td></tr>
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+```python
+from peach import pLog
+
+pLog.debug("something1")
+
+# disable from here
+pLog.disable_debug_msg()
+pLog.debug("something2")
+
+# enabled from here
+pLog.enable_debug_msg()
+pLog.debug("something3")
+
+# >>> [ pLog::debugMsg ]: something1
+# >>> [ pLog::debugMsg ]: something3
+```
+
+<br><br>
+
+### 3.3 Error and Exception Throwing.
+
+> key functions:
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` </sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pLog.<code> error </code><sup>(msg, fn=None, cls=None, e=None)</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>str</code>  <b> msg </b> : messages<br>
+    <!--@param-->- <code>str/func</code> <b> fn </b> : can be function pointer or string<br>
+    <!--@param-->- <code>str/self</code> <b> cls </b> : can be class instance or string<br>
+    <!--@param-->- <code>Any</code> <b> e </b> : Error Object
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+__Examples__:
+
+1. use it as the same as message:
+```python
+from peach import pLog
+
+def Foo():
+    pass
+
+# this will not raise and stop. only print message
+pLog.error("error here", fn=Foo)
+```
+
+2. throw specific errors:
+```python
+pLog.error("error here", fn=Foo, e=RuntimeError("lib open"))
+```
+
+3. put it in try-except block:
+```python
+try:
+    import hou
+except ImportError as e:
+    pLog.error("Cannot Load <hou> Module", cls=__file__, fn="import", e=e)
+finally:
+    pLog.debug("<hou> Module Found", cls=__file__, fn="import")
+```
+
+<br><br>
+
+## 4. pIco Module
+### 4.0 Denpendencies
+- `peach.pImp`
+- `peach.pDir`
+- `peach.pLog`
+
+### 4.1 Icon Path configuration
+
+<br><br>
+
+### 4.2 Icon Class
+
+<br><br>
+
+### 4.3 IconTank Class
+
+<br><br>
