@@ -121,7 +121,45 @@ pDir.exists("your_path")
 >>> False
 ```
 
-<br><br>
+
+> Other Useful Functions
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pDir.<code> fileName </code> <sup> (filepath='') </sup>
+    <blockquote>
+    <sub>@<sup>New[ 2022-01-12 22:38 ]</sup></sub><br>
+    Extract Base Name from Path( <i>same as os.path.basename()</i> )
+    </blockquote>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    peach.pDir.<code> fileNameBare </code> <sup> (filepath='') </sup>
+    <blockquote>
+    <sub>@<sup>New[ 2022-01-12 22:38 ]</sup></sub><br>
+    Extract Base Name <b>without</b> extention from Path
+    </blockquote>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+```python
+from peach import pDir
+
+pDir.fileName("your_path/to/file.ext")
+>>> "file.ext"
+
+pDir.fileNameBare("your_path/to/file.ext")
+>>> "file"
+```
 
 ### 1.4 ls functions
 If you are familiar with Linux `ls` function, this is basically what it does: it lists all the directories or files under the given path. retunr `None` or `[]` if there isn't any.

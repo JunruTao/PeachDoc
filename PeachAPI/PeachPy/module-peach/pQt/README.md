@@ -9,6 +9,7 @@
     - [2.0 Dependencies](#20-dependencies)
     - [2.1 Getting QPixmap object](#21-getting-qpixmap-object)
     - [2.2 Using pq_ico Icon Manager](#22-using-pq_ico-icon-manager)
+      - [4.3.1 Constructor](#431-constructor)
 
 <br><br>
 
@@ -34,10 +35,10 @@ from peach.pQt.qHotel import QtWidgets, QtGui
 ### 2.1 Getting QPixmap object
 
 <!--///////////////////Function-Table/////////////////////-->
-- <sub>`getter` `args`</sub> <!--{ `TAGS` }-->
+- <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    Icon.<code> getPixmap </code><sup>(name="", size="x25")</sup><br>
+    <sup>peach.pQt.</sup> pq_ico.<code> getPixmap </code><sup>(name="", size="x25")</sup><br>
     </td></tr> 
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ PARAMETER INPUTS ] -->
@@ -71,6 +72,33 @@ q_pixmap = pq_ico.getPixmap("peach", size="x25")
 <br><br>
 
 ### 2.2 Using pq_ico Icon Manager 
+
+<!--///////////////////Class-Table/////////////////////-->
+<sub>Inherit &rarr; `object` </sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ CLASS ] -->
+    <big><sup>peach.pQt.</sup> pq_ico.<code> IconManager </code><sup>class</sup><br></h4>
+    </td></big> 
+    <!-- ( /END OF CLASS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+> member functions:
+#### 4.3.1 Constructor
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`constructor` `args`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    IconManager.<code> __init__ </code><sup>(self, name="", types=None)</sup><br><br>
+    <blockquote>
+    When IconTank's constructor is called the first time, internally it will run function 
+    <i>_construct_library</i>. it will construct/log in all the found icons by scanning the directory.This function will be only running once. unless refresh is called.
+    </blockquote>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
 
 __Examples:__
 - Use Icon Manager, pre-log _QtGui.QPixmap_ objects and query them.
