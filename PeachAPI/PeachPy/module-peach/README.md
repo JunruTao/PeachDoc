@@ -586,6 +586,7 @@ There's no need to handle this object by users manually. Icon object is a type, 
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
 
+
 > member functions:
 #### 4.2.1 Constructor
 <!--///////////////////Function-Table/////////////////////-->
@@ -654,7 +655,7 @@ There's no need to handle this object by users manually. Icon object is a type, 
 
 
 <!--///////////////////Class-Table/////////////////////-->
-<sub> Inherit &rarr; `object` </sub> <!--{ `TAGS` }-->
+<sub>Inherit &rarr; `object` </sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ CLASS ] -->
     <big>peach.pIco.<code> IconTank </code><sup>class</sup><br></h4>
@@ -662,6 +663,7 @@ There's no need to handle this object by users manually. Icon object is a type, 
     <!-- ( /END OF CLASS ) -->
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
 
 > member functions:
 #### 4.3.1 Constructor
