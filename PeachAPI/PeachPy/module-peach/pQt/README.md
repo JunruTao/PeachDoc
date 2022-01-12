@@ -44,7 +44,7 @@ from peach.pQt.qHotel import QtWidgets, QtGui
     <tr><td> <!-- [ PARAMETER INPUTS ] -->
     <details> 
     <summary><i>parameters</i>: </summary>
-    <!--@param-->- <code>str</code>  <b> name </b> : Icon Name
+    <!--@param-->- <code>str</code>  <b> name </b> : Icon Name<br>
     <!--@param-->- <code>str</code>  <b> size </b> : i.g. "x25", "SVG" etc
     </detials><dv>
     </td></tr> 
@@ -73,6 +73,8 @@ q_pixmap = pq_ico.getPixmap("peach", size="x25")
 
 ### 2.2 Using pq_ico Icon Manager 
 
+Updates: <sub>@<sup>Added[ 2022-01-12 23:14 ]</sup></sub><br>
+
 <!--///////////////////Class-Table/////////////////////-->
 <sub>Inherit &rarr; `object` </sub> <!--{ `TAGS` }-->
     <table>
@@ -85,19 +87,83 @@ q_pixmap = pq_ico.getPixmap("peach", size="x25")
 
 > member functions:
 #### 4.3.1 Constructor
+
 <!--///////////////////Function-Table/////////////////////-->
 - <sub>`constructor` `args`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    IconManager.<code> __init__ </code><sup>(self, name="", types=None)</sup><br><br>
+    IconManager.<code> __init__ </code><sup>(self, size="x25")</sup><br><br>
     <blockquote>
-    When IconTank's constructor is called the first time, internally it will run function 
-    <i>_construct_library</i>. it will construct/log in all the found icons by scanning the directory.This function will be only running once. unless refresh is called.
+    <sub>@<sup>Added[ 2022-01-12 22:42 ]</sup></sub><br>
+    When IconManager's constructor is called, you need specify the which size of icons this manager is managing.<br>However, you can query other sizes from this manager if other icons are created first somewhere in Runtime.
+    </blockquote>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>str</code>  <b> size </b> : i.g. "x25", "SVG" etc
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`member` `args`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    IconManager.<code> stash </code><sup>(*args)</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>*str</code>  <b> name </b> : icon names you want to stash in.
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`member`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    IconManager.<code> stash_all </code><sup>(*args)</sup><br>
+    <blockquote>
+    Stash the found icon of this manager's size.
     </blockquote>
     </td></tr> 
     <!-- ( /END OF FUNCTIONS ) -->
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`getter` `args`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    IconManager.<code> get </code><sup>(self, name, size_="")</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>str</code>  <b> name </b> : Icon Name<br>
+    <!--@param-->- <code>str</code>  <b> size </b> : i.g. "x25", "SVG" etc
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code>QtGui.QPixmap</code> or <code>None</code>
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
 
 
 __Examples:__
