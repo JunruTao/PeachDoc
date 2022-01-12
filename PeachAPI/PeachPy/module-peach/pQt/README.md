@@ -28,8 +28,36 @@ from peach.pQt.qHotel import QtWidgets, QtGui
 ## 2. pQt.pq_ico
 ### 2.0 Dependencies
 - `peach.pQt.qHotel`
+- `peach.Imp`
+- `peach.Ico`
 
 ### 2.1 Getting QPixmap object
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`getter` `args`</sub> <!--{ `TAGS` }-->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    Icon.<code> getPixmap </code><sup>(name="", size="x25")</sup><br>
+    </td></tr> 
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>str</code>  <b> name </b> : Icon Name
+    <!--@param-->- <code>str</code>  <b> size </b> : i.g. "x25", "SVG" etc
+    </detials><dv>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code>QtGui.QPixmap</code> or <code>None</code> Qt Pixmap object
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
 
 __Examples:__
 
@@ -37,7 +65,7 @@ __Examples:__
 ```python
 from peach.pQt import pq_ico
 
-q_pixmap = pq_ico.getIcon("peach")
+q_pixmap = pq_ico.getPixmap("peach", size="x25")
 ```
 
 <br><br>

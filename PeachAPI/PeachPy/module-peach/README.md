@@ -580,7 +580,7 @@ There's no need to handle this object by users manually. Icon object is a type, 
 <sub> Inherit &rarr; `object` </sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ CLASS ] -->
-    <h4>peach.pIco.<code> Icon </code><sup>class</sup><br></h4>
+    <big>peach.pIco.<code> Icon </code><sup>class</sup><br></big>
     </td></tr> 
     <!-- ( /END OF CLASS ) -->
     </table>
@@ -657,8 +657,8 @@ There's no need to handle this object by users manually. Icon object is a type, 
 <sub> Inherit &rarr; `object` </sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ CLASS ] -->
-    <h4>peach.pIco.<code> IconTank </code><sup>class</sup><br></h4>
-    </td></tr> 
+    <big>peach.pIco.<code> IconTank </code><sup>class</sup><br></h4>
+    </td></big> 
     <!-- ( /END OF CLASS ) -->
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
