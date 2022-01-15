@@ -34,6 +34,9 @@
       - [4.3.1 Constructor](#431-constructor)
       - [4.3.2 Refresh Database](#432-refresh-database)
       - [4.3.3 getTypes, getNames, get](#433-gettypes-getnames-get)
+  - [5. peach.pUtil](#5-peachputil)
+    - [5.0 Dependencies](#50-dependencies)
+    - [5.1 Color Casting](#51-color-casting)
 
 <br><br>
 
@@ -798,3 +801,70 @@ im = pIco.IconTank()
 peach_icon = im.get("peach")
 picon_path = peach_icon.getPath("x25")
 ```
+
+
+<br><br>
+
+
+## 5. peach.pUtil
+Anything else that commonly used to convert, do math, naming parsing, etc. Should be included in this module
+
+### 5.0 Dependencies
+- `None`
+
+### 5.1 Color Casting
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pUtil.<code> fRGB </code><sup>(*args)</sup><br><br>
+    <blockquote>
+    From given arguments cast to RGB tuple, if one value is give, color will be grayscale
+    </blockquote>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>float</code>  <b> args </b> :  color values 0.0-1.0<br>
+    </detials>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> tuple of 3 floats</code>
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pUtil.<code> fRGBA </code><sup>(*args)</sup><br><br>
+    <blockquote>
+    From given arguments cast to RGBA tuple, if one value is give, color will be grayscale
+    </blockquote>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>float</code>  <b> args </b> :  color values 0.0-1.0<br>
+    </detials>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> tuple of 4 floats</code>
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->

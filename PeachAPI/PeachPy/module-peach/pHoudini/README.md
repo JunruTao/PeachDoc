@@ -15,6 +15,7 @@
     - [1.0 Dependencies](#10-dependencies)
     - [1.1 Selection](#11-selection)
     - [1.2 Naming](#12-naming)
+    - [1.3 Color](#13-color)
   - [2. pHoudini.wm](#2-phoudiniwm)
     - [2.0 Dependencies](#20-dependencies)
     - [2.1 Getting Main Window Properties](#21-getting-main-window-properties)
@@ -94,6 +95,10 @@ This layer implement `<hou.node/Node>` functions, anything related to hou node m
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
 
+
+<br><br>
+
+
 ### 1.2 Naming
 
 name/rename fucntions.
@@ -116,6 +121,34 @@ name/rename fucntions.
     <!-- ( /END OF PARM ) -->
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . -->
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.pHoudini.</sup> node.<code> getName </code><sup>(node=None)</sup><br><br>
+    <blockquote>
+    
+    </blockquote>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>hou.Node</code>  <b> node </b> :  houdini node<br>
+    </detials>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> node name
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
 
 ```python
 from peach.pHoudini import node
@@ -125,6 +158,92 @@ if sl:
     node.rename(sl[0], "new_name")
 
 ```
+
+
+
+<br><br>
+
+### 1.3 Color
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.pHoudini.</sup> node.<code> getColor </code><sup>(node=None)</sup><br><br>
+    <blockquote>
+    
+    </blockquote>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>hou.Node</code>  <b> node </b> :  houdini node<br>
+    </detials>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> hou.Color</code> node color
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+<sup>Other Getters:</sup>
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.pHoudini.</sup> node.<code> getColorRGB </code><sup>(node=None)</sup><br>
+    <sup>peach.pHoudini.</sup> node.<code> getColorHSV </code><sup>(node=None)</sup><br>
+    <sup>peach.pHoudini.</sup> node.<code> getColorHSL </code><sup>(node=None)</sup><br>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>hou.Node</code>  <b> node </b> :  houdini node<br>
+    </detials>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> tuple </code>color value
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+Set Color:
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `args`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.pHoudini.</sup> node.<code> changeColor </code><sup>(node, *args)</sup><br><br>
+    <blockquote>
+    
+    </blockquote>
+    </td></tr>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ PARAMETER INPUTS ] -->
+    <details> 
+    <summary><i>parameters</i>: </summary>
+    <!--@param-->- <code>hou.Node</code>  <b> node </b> :  houdini node<br>
+    <!--@param-->- <code>hou.Color or float</code>  <b> args </b> : houdini color or tuple of RGB <br>
+    </detials>
+    </td></tr> 
+    <!-- ( /END OF PARM ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<br><br>
 
 ## 2. pHoudini.wm
 
