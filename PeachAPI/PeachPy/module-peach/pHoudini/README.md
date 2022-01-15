@@ -11,7 +11,7 @@
 - [Module peach.pHoudini](#module-peachphoudini)
   - [Sub-Modules](#sub-modules)
   - [Topics](#topics)
-  - [1. pHoudini.node](#1-phoudininode)
+  - [1. pHoudini.hNode](#1-phoudinihnode)
     - [1.0 Dependencies](#10-dependencies)
     - [1.1 Selection](#11-selection)
     - [1.2 Naming](#12-naming)
@@ -22,7 +22,7 @@
 
 <br><br>
 
-## 1. pHoudini.node
+## 1. pHoudini.hNode
 This layer implement `<hou.node/Node>` functions, anything related to hou node management.
 
 ### 1.0 Dependencies
@@ -36,7 +36,7 @@ This layer implement `<hou.node/Node>` functions, anything related to hou node m
 - <sub>`pub` `args`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    <sup>peach.pHoudini.</sup> node.<code> select </code><sup>(node=None)</sup><br>
+    <sup>peach.pHoudini.</sup> hNode.<code> select </code><sup>(node=None)</sup><br>
     </td></tr> 
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ PARAMETER INPUTS ] -->
@@ -53,7 +53,7 @@ This layer implement `<hou.node/Node>` functions, anything related to hou node m
 - <sub>`pub` `args`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    <sup>peach.pHoudini.</sup> node.<code> deselect </code><sup>(node=None)</sup><br><br>
+    <sup>peach.pHoudini.</sup> hNode.<code> deselect </code><sup>(node=None)</sup><br><br>
     <blockquote>
     If there's no node specified, selection will be cleared.
     </blockquote>
@@ -73,7 +73,7 @@ This layer implement `<hou.node/Node>` functions, anything related to hou node m
 - <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    <sup>peach.pHoudini.</sup> node.<code> listSelected </code><sup>(item=False, connection=False, bundle=False)</sup><br>
+    <sup>peach.pHoudini.</sup> hNode.<code> listSelected </code><sup>(item=False, connection=False, bundle=False)</sup><br>
     </td></tr> 
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ PARAMETER INPUTS ] -->
@@ -107,7 +107,7 @@ name/rename fucntions.
 - <sub>`pub` `args`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    <sup>peach.pHoudini.</sup> node.<code> rename </code><sup>(node=None, name="", sel=False)</sup><br><br>
+    <sup>peach.pHoudini.</sup> hNode.<code> rename </code><sup>(node=None, name="", sel=False)</sup><br><br>
     </td></tr> 
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ PARAMETER INPUTS ] -->
@@ -125,7 +125,7 @@ name/rename fucntions.
 - <sub>`pub` `args` `return`</sub> <!-- `TAGS` -->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    <sup>peach.pHoudini.</sup> node.<code> getName </code><sup>(node=None)</sup><br><br>
+    <sup>peach.pHoudini.</sup> hNode.<code> getName </code><sup>(node=None)</sup><br><br>
     <blockquote>
     
     </blockquote>
@@ -151,11 +151,11 @@ name/rename fucntions.
 
 
 ```python
-from peach.pHoudini import node
+from peach.pHoudini import hNode
 
-sl = node.listSelected()
+sl = hNode.listSelected()
 if sl:
-    node.rename(sl[0], "new_name")
+    hNode.rename(sl[0], "new_name")
 
 ```
 
@@ -168,7 +168,7 @@ if sl:
 - <sub>`pub` `args` `return`</sub> <!-- `TAGS` -->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    <sup>peach.pHoudini.</sup> node.<code> getColor </code><sup>(node=None)</sup><br><br>
+    <sup>peach.pHoudini.</sup> hNode.<code> getColor </code><sup>(node=None)</sup><br><br>
     <blockquote>
     
     </blockquote>
@@ -197,9 +197,9 @@ if sl:
 - <sub>`pub` `args` `return`</sub> <!-- `TAGS` -->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    <sup>peach.pHoudini.</sup> node.<code> getColorRGB </code><sup>(node=None)</sup><br>
-    <sup>peach.pHoudini.</sup> node.<code> getColorHSV </code><sup>(node=None)</sup><br>
-    <sup>peach.pHoudini.</sup> node.<code> getColorHSL </code><sup>(node=None)</sup><br>
+    <sup>peach.pHoudini.</sup> hNode.<code> getColorRGB </code><sup>(node=None)</sup><br>
+    <sup>peach.pHoudini.</sup> hNode.<code> getColorHSV </code><sup>(node=None)</sup><br>
+    <sup>peach.pHoudini.</sup> hNode.<code> getColorHSL </code><sup>(node=None)</sup><br>
     </td></tr>
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ PARAMETER INPUTS ] -->
@@ -225,7 +225,7 @@ Set Color:
 - <sub>`pub` `args`</sub> <!-- `TAGS` -->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    <sup>peach.pHoudini.</sup> node.<code> changeColor </code><sup>(node, *args)</sup><br><br>
+    <sup>peach.pHoudini.</sup> hNode.<code> changeColor </code><sup>(node, *args)</sup><br><br>
     <blockquote>
     
     </blockquote>

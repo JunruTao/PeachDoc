@@ -37,6 +37,7 @@
   - [5. peach.pUtil](#5-peachputil)
     - [5.0 Dependencies](#50-dependencies)
     - [5.1 Color Casting](#51-color-casting)
+  - [6. peach.pGlob](#6-peachpglob)
 
 <br><br>
 
@@ -868,3 +869,15 @@ Anything else that commonly used to convert, do math, naming parsing, etc. Shoul
     <!-- ( /END OF RETURN ) -->
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<br><br>
+
+## 6. peach.pGlob
+Where the global information regarding peach, is stored here.
+
+```python
+from peach import pGlob
+
+print(pGlob.PEACH_VERSION_MAJOR)
+```

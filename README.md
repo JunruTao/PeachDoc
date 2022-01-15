@@ -15,4 +15,3 @@
 
 ## Peach API Documentations
 - [__PeachPy__: Peach Python 3 API Documentation](./PeachAPI/PeachPy/README.md)
-- [__Peach++__: Peach C++ API Documentation](./PeachAPI/Peach++/README.md)
