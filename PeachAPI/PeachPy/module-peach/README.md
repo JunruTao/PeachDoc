@@ -3,7 +3,7 @@
 ## Sub-modules
 - [peach.pBlender](./pBlender/README.md)
 - [peach.pHoudini](./pHoudini/README.md)
-- [peach.pQt](./pBlender/README.md)
+- [peach.pQt](./pQt/README.md)
 
 ## Topics
 - [Module peach](#module-peach)

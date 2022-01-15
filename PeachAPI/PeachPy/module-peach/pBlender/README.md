@@ -1,1 +1,1 @@
-# Module `peach.pBlender`
+# Module peach.pBlender

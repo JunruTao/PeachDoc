@@ -5,10 +5,10 @@
   - [Topics](#topics)
   - [Sub-Modules](#sub-modules)
   - [1. pQt.qHotel](#1-pqtqhotel)
-  - [2. pQt.pq_ico](#2-pqtpq_ico)
+  - [2. pQt.img](#2-pqtimg)
     - [2.0 Dependencies](#20-dependencies)
     - [2.1 Getting QPixmap object](#21-getting-qpixmap-object)
-    - [2.2 Using pq_ico Icon Manager](#22-using-pq_ico-icon-manager)
+    - [2.2 Using img Icon Manager](#22-using-img-icon-manager)
       - [4.3.1 Constructor](#431-constructor)
 
 <br><br>
@@ -26,7 +26,7 @@ This is a Qt, PyQt, PySide wrapper. Instead of importing from PySide2, which mig
 from peach.pQt.qHotel import QtWidgets, QtGui
 ```
 
-## 2. pQt.pq_ico
+## 2. pQt.img
 ### 2.0 Dependencies
 - `peach.pQt.qHotel`
 - `peach.Imp`
@@ -38,7 +38,7 @@ from peach.pQt.qHotel import QtWidgets, QtGui
 - <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    <sup>peach.pQt.</sup> pq_ico.<code> getPixmap </code><sup>(name="", size="x25")</sup><br>
+    <sup>peach.pQt.</sup> img.<code> getPixmap </code><sup>(name="", size="x25")</sup><br>
     </td></tr> 
     <!-- ( /END OF FUNCTIONS ) -->
     <tr><td> <!-- [ PARAMETER INPUTS ] -->
@@ -64,14 +64,14 @@ __Examples:__
 
 - From _name_ get _QtGui.QPixmap_ object.
 ```python
-from peach.pQt import pq_ico
+from peach.pQt import img
 
-q_pixmap = pq_ico.getPixmap("peach", size="x25")
+q_pixmap = img.getPixmap("peach", size="x25")
 ```
 
 <br><br>
 
-### 2.2 Using pq_ico Icon Manager 
+### 2.2 Using img Icon Manager 
 
 Updates: <sub>@<sup>Added[ 2022-01-12 23:14 ]</sup></sub><br>
 
@@ -79,7 +79,7 @@ Updates: <sub>@<sup>Added[ 2022-01-12 23:14 ]</sup></sub><br>
 <sub>Inherit &rarr; `object` </sub> <!--{ `TAGS` }-->
     <table>
     <tr><td> <!-- [ CLASS ] -->
-    <big><sup>peach.pQt.</sup> pq_ico.<code> IconManager </code><sup>class</sup><br></h4>
+    <big><sup>peach.pQt.</sup> img.<code> IconManager </code><sup>class</sup><br></h4>
     </td></big> 
     <!-- ( /END OF CLASS ) -->
     </table>
@@ -169,9 +169,9 @@ Updates: <sub>@<sup>Added[ 2022-01-12 23:14 ]</sup></sub><br>
 __Examples:__
 - Use Icon Manager, pre-log _QtGui.QPixmap_ objects and query them.
 ```python
-from peach.pQt import pq_ico
+from peach.pQt import img
 
-pq_im = pq_ico.IconManager()
+pq_im = img.IconManager()
 pq_im.stash("peach", "peach_dev", "peachFolder_dev")
 
 qPxm_peach = pq_im.get("peach")
