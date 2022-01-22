@@ -127,32 +127,213 @@ pDir.exists("your_path")
 
 
 > Other Useful Functions
+
+
 <!--///////////////////Function-Table/////////////////////-->
-- <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    peach.pDir.<code> fileName </code> <sup> (filepath='') </sup>
-    <blockquote>
-    <sub>@<sup>New[ 2022-01-12 22:38 ]</sup></sub><br>
-    Extract Base Name from Path( <i>same as os.path.basename()</i> )
-    </blockquote>
-    </td></tr>
+    <sup>peach.</sup> pDir.<code> getPeachConfigsDir() </code><br><br>
     <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
 <!--///////////////////Function-Table/////////////////////-->
-- <sub>`pub` `args` `return`</sub> <!--{ `TAGS` }-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
     <table>
     <tr><td> <!-- [ FUNCTIONS ] -->
-    peach.pDir.<code> fileNameBare </code> <sup> (filepath='') </sup>
-    <blockquote>
-    <sub>@<sup>New[ 2022-01-12 22:38 ]</sup></sub><br>
-    Extract Base Name <b>without</b> extention from Path
-    </blockquote>
-    </td></tr>
+    <sup>peach.</sup> pDir.<code> getPeachHouDir() </code><br><br>
     <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> getPeachBlnDir() </code><br><br>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> getPeachIconsDir() </code><br><br>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> getPeachIconSvgDir() </code><br><br>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> getPeachIcon25() </code><br><br>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> getPeachImagesDir() </code><br><br>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> getPeachImgSvgDir() </code><br><br>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> getPeachImg256() </code><br><br>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> getPeachImg512() </code><br><br>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> getPeachImg1024() </code><br><br>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `return`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> getPeachFontsDir() </code><br><br>
+    <!-- ( /END OF FUNCTIONS ) -->
+    <tr><td> <!-- [ RETURN VALUES ] -->
+    <details> 
+    <summary><i>return</i>: </summary>
+    <!--@return-->&rarr; <code> str</code> filepath
+    </detials> 
+    </td></tr>
+    <!-- ( /END OF RETURN ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
 
 
 ```python
@@ -771,6 +952,33 @@ There's no need to handle this object by users manually. Icon object is a type, 
     <!-- ( /END OF RETURN ) -->
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `member`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> printTypes </code><sup>(self)</sup><br><br>
+    <blockquote>[ IconTank ] Debug Function</blockquote>
+    <!-- ( /END OF FUNCTIONS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--///////////////////Function-Table/////////////////////-->
+- <sub>`pub` `member`</sub> <!-- `TAGS` -->
+    <table>
+    <tr><td> <!-- [ FUNCTIONS ] -->
+    <sup>peach.</sup> pDir.<code> printNames </code><sup>(self)</sup><br><br>
+    <blockquote>[ IconTank ] Debug Function</blockquote>
+    <!-- ( /END OF FUNCTIONS ) -->
+    </table>
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
 <!--///////////////////Function-Table/////////////////////-->
 - <sub>`getter` `args`</sub> <!--{ `TAGS` }-->
     <table>
@@ -793,7 +1001,7 @@ There's no need to handle this object by users manually. Icon object is a type, 
     </td></tr>
     <!-- ( /END OF RETURN ) -->
     </table>
-    <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
 
 ```python
 from peach import pIco
@@ -804,7 +1012,12 @@ picon_path = peach_icon.getPath("x25")
 ```
 
 
+
+
+
 <br><br>
+
+
 
 
 ## 5. peach.pUtil
