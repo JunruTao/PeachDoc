@@ -12,7 +12,9 @@
     - [4.1 Constructor](#41-constructor)
     - [4.2 Refresh Database](#42-refresh-database)
     - [4.3 getTypes, getNames, get](#43-gettypes-getnames-get)
+    - [4.4 Usage Example:](#44-usage-example)
   - [5. Getting Houdini SVG Icons](#5-getting-houdini-svg-icons)
+    - [5.1 Example](#51-example)
   - [6. Getting Images](#6-getting-images)
     - [6.1 Getting "Peach Brand" Specific Images:](#61-getting-peach-brand-specific-images)
 
@@ -233,6 +235,9 @@ There's no need to handle this object by users manually. Icon object is a type, 
     </table>
     <!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
 
+
+### 4.4 Usage Example:
+
 ```python
 from peach import pIco
 
@@ -273,7 +278,7 @@ picon_path = peach_icon.getPath("x25")
     <!-- . . . . . . . . . . . . . . . . . . . . . . . .  -->
 
 
-__Example__
+### 5.1 Example
 
 ```python
 
