@@ -299,7 +299,7 @@ __[ Based Template Class ]__
 <sub>Inherit &rarr; `object` </sub> <!-- `TAGS` -->
     <table>
     <tr><td> <!-- [ CLASS ] -->
-    <big><sup>peach.</sup> pDir.<code> _DP0IcXTemplate </code><sup>class</sup><br></h4>
+    <big><sup>peach.</sup> pIco.<code> _DP0IcXTemplate </code><sup>class</sup><br></h4>
     </td></big> 
     <!-- ( /END OF CLASS ) -->
     </table>
@@ -313,7 +313,7 @@ __User Callable Classes__
 <sub>Inherit &rarr; `_DP0IcXTemplate` </sub> <!-- `TAGS` -->
     <table>
     <tr><td> <!-- [ CLASS ] -->
-    <big><sup>peach.</sup> pDir.<code> DP </code><sup>class</sup><br></h4>
+    <big><sup>peach.</sup> pIco.<code> DP </code><sup>class</sup><br></h4>
     </td></big> 
     <!-- ( /END OF CLASS ) -->
     </table>
@@ -326,7 +326,7 @@ __User Callable Classes__
 <sub>Inherit &rarr; `_DP0IcXTemplate` </sub> <!-- `TAGS` -->
     <table>
     <tr><td> <!-- [ CLASS ] -->
-    <big><sup>peach.</sup> pDir.<code> DPS </code><sup>class</sup><br></h4>
+    <big><sup>peach.</sup> pIco.<code> DPS </code><sup>class</sup><br></h4>
     </td></big> 
     <!-- ( /END OF CLASS ) -->
     </table>
